@@ -20,6 +20,8 @@ public class MessageServiceImpl implements MessageService {
     @Override
     public Message saveMessage(Message message) {
         // Logique supplémentaire avant d'enregistrer le message, si nécessaire
+        message.setReceiver(null);
+        message.setSender(null);
         return messageRepository.save(message);
     }
 

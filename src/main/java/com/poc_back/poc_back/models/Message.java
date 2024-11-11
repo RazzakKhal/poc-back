@@ -17,12 +17,12 @@ public class Message {
     @Column(nullable = false)
     private LocalDateTime sentAt;
 
-    @ManyToOne
-    @JoinColumn(name = "sender_id", nullable = false)
+    @ManyToOne(optional = true)
+    @JoinColumn(name = "sender_id", nullable = true)
     private User sender;
 
-    @ManyToOne
-    @JoinColumn(name = "receiver_id", nullable = false)
+    @ManyToOne(optional = true)
+    @JoinColumn(name = "receiver_id", nullable = true)
     private User receiver;
 
     // Getters and Setters
